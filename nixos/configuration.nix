@@ -69,7 +69,7 @@
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canRouchEfiVariables = false;
+  boot.loader.efi.canTouchEfiVariables = false;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -79,8 +79,7 @@
       # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
       # Be sure to change it (using passwd) after rebooting!
       isNormalUser = true;
-      extraGroups = ["wheel","networkmanager"];
-      shell = pks.zsh;
+      extraGroups = ["wheel" "networkmanager"];
     };
   };
   # Enable networking
@@ -137,29 +136,14 @@
 
 
   environment.systemPackages = with pkgs; [
-    vim
-    tmux
-    htop
     firefox
-    neovim
-    rustup
     wofi
-    starship
-    git
-    gh
-    neofetch
     spotify
     pavucontrol
     pulseaudio
     mpd
-    killall
     hyprpaper
-    playerctl
-    ripgrep
-    fd
-    gcc
-    wget
-    unzip
+
     
     ];
 
@@ -172,9 +156,7 @@
     # };
 
     programs = {
-    zsh.enable = true;
     hyprland.enable = true;
-    starship.enable = true;
     waybar.enable = true;
   };
 
@@ -185,8 +167,6 @@
   fonts.packages = with pkgs; [ 
     nerdfonts
     ];
-
-
 
   system.stateVersion = "23.11";
 }

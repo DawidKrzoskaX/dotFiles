@@ -6,7 +6,7 @@
 
   in{
 
-	programs.alacrity = {
+	programs.alacritty = {
 		enable = true;
 		};
 
