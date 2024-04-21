@@ -17,6 +17,7 @@
     ./alacrity.nix
     ./cli.nix
     ./shell.nix
+    ./desktop/fonts.nix
     #./desktop/hyprland/hyprland.nix
     #./desktop/hyprland/waybar.nix
     #./desktop/hyprland/hyprpaper.nix
