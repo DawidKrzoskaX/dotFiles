@@ -19,6 +19,7 @@
     ./shell.nix
     ./modules/fonts.nix
     ./desktop/fonts.nix
+    ./desktop/wofi.nix
     ./desktop/hyprland/hyprland.nix
     #./music.nix
 

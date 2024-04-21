@@ -16,7 +16,6 @@ in {
   };
   programs.waybar = {
     enable = true;
-    });
     systemd.enable = true;
     settings = {
       primary = {
@@ -130,10 +129,6 @@ in {
         window#waybar {
           padding: 0;
           border-radius: 0.5em;
-          /*
-          background-color: ${toRGBA colors.surface "0.7"};
-          color: ${colors.on_surface};
-          */
         }
         .modules-left {
           margin-left: -0.65em;
@@ -143,27 +138,17 @@ in {
         }
 
         #workspaces button {
-        /*
-          background-color: ${colors.surface};
-          color: ${colors.on_surface};
-          */
           padding-left: 0.4em;
           padding-right: 0.4em;
           margin-top: 0.15em;
           margin-bottom: 0.15em;
         }
-        /*
         #workspaces button.hidden {
-          background-color: ${colors.surface};
-          color: ${colors.on_surface_variant};
         }
         
         #workspaces button.focused,
         #workspaces button.active {
-          background-color: ${colors.tertiary};
-          color: ${colors.on_tertiary};
         }
-        */
 
         #clock {
           padding-right: 1em;
