@@ -19,11 +19,8 @@
     ./shell.nix
     ./modules/fonts.nix
     ./desktop/fonts.nix
-    #./desktop/hyprland/hyprland.nix
-    #./desktop/hyprland/waybar.nix
-    #./desktop/hyprland/hyprpaper.nix
+    ./desktop/hyprland/hyprland.nix
     #./music.nix
-    #./desktop.nix
 
   ];
 
