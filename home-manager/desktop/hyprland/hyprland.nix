@@ -28,7 +28,6 @@
         gaps_in = 15;
         gaps_out = 20;
         border_size = 2;
-        layout = "master";
       };
 
       group = {
@@ -37,10 +36,11 @@
 
       binds = {
         movefocus_cycles_fullscreen = false;
+
       };
 
       input = {
-        kb_layout = "us";
+        kb_layout = "pl,us";
       };
 
       dwindle = {
@@ -86,7 +86,8 @@
       in
         [
           # Program bindings
-          "SUPER,Return,exec,alacritty"
+          "SUPER,t,exec,alacritty"
+          "SUPER,o,exec,wofi --show drun"
           ",XF86AudioRaiseVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
           ",XF86AudioLowerVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
           ",XF86AudioMute,exec,${pactl} set-sink-mute @DEFAULT_SINK@ toggle"
@@ -108,20 +109,12 @@
               "ALT,XF86AudioPrev,exec,${playerctld} unshift"
               "ALT,XF86AudioPlay,exec,systemctl --user restart playerctld"
             ]
-        )
-        
-        ++
-        # Launcher
-        (
-          let
-            wofi = lib.getExe config.programs.wofi.package;
-          in
-            lib.optionals config.programs.wofi.enable [
-              "SUPER,o,exec,${wofi} -S drun -x 10 -y 10 -W 25% -H 60%"
-                   ]
         );
-
-      monitor= ",preferred,auto,auto";
     };
+
+     extraConfig = ''
+      monitor=DP-2,2560x1440,-2560x0,1
+      monitor=HDMI-A-1,1920x1080,0x0,1
+    '';
   };
 }

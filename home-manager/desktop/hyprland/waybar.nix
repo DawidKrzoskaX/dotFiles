@@ -120,7 +120,7 @@ in {
     # w x y z -> top, right, bottom, left
     style =''
         * {
-          font-family: FiraCode
+          font-family: FiraCode;
           font-size: 12pt;
           padding: 0;
           margin: 0 0.4em;
@@ -130,9 +130,11 @@ in {
           padding: 0;
           border-radius: 0.5em;
         }
+
         .modules-left {
           margin-left: -0.65em;
         }
+
         .modules-right {
           margin-right: -0.65em;
         }
@@ -143,13 +145,7 @@ in {
           margin-top: 0.15em;
           margin-bottom: 0.15em;
         }
-        #workspaces button.hidden {
-        }
         
-        #workspaces button.focused,
-        #workspaces button.active {
-        }
-
         #clock {
           padding-right: 1em;
           padding-left: 1em;

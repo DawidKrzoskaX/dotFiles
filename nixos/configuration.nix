@@ -70,6 +70,7 @@
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
+  hardware.opengl.enable = true;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -105,19 +106,6 @@
     LC_TELEPHONE = "pl_PL.UTF-8";
     LC_TIME = "pl_PL.UTF-8";
   };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -140,14 +128,10 @@
 
   environment.systemPackages = with pkgs; [
     firefox
-    wofi
     spotify
     pavucontrol
     pulseaudio
     mpd
-    hyprpaper
-
-    
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
@@ -157,12 +141,6 @@
     #   enable = true;
     #   enableSSHSupport = true;
     # };
-
-    programs = {
-    hyprland.enable = true;
-    waybar.enable = true;
-  };
-
   services = {
     mpd.enable = true;
   };

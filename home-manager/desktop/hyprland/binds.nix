@@ -27,7 +27,7 @@
     in
       [
         "SUPER,q,killactive"
-        "SUPERSHIFT,,exit"
+        "SUPER,m,exit"
         "SUPER,f,fullscreen,1"
 
       ]
