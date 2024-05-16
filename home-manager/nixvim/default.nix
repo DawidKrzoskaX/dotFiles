@@ -4,10 +4,14 @@
   ...
 }: let
   in{
-  programs.nixvim = {
+imports = [
+./telescope.nix
+./neo-tree.nix
+];
+    programs.nixvim = {
     enable = true;
-
-    colorschemes.gruvbox.enable = true;
-    plugins.lightline.enable = true;
   };
 }
+
+
+

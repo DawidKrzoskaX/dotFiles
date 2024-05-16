@@ -13,7 +13,7 @@
     # inputs.nix-colors.homeManagerModule
 
     # You can also split up your configuration and import pieces of it here:
-    ./nvim.nix
+    #./nvim.nix
     ./alacrity.nix
     ./cli.nix
     ./shell.nix
@@ -23,6 +23,8 @@
     ./desktop/hyprland/hyprland.nix
     ./nixvim/default.nix
     #./music.nix
+
+    inputs.nixvim.homeManagerModules.nixvim
 
   ];
 

@@ -8,6 +8,8 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.url = "github:nix-community/nixvim/nixos-23.11";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
