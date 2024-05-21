@@ -1,23 +1,10 @@
 {
-  plugins.telescope = {
+  programs.nixvim.plugins.telescope = {
     enable = true;
-
     keymaps = {
+      "<leader>fg" = "live_grep";
       "<leader>ff" = "find_files";
-      "<C-p>" = "git_files";
     };
+    extensions.fzf-native = { enable = true; };
   };
-
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>ff";
-      action = /* lua */ ''
-        function() 
-          require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") });
-        end
-      '';
-      lua = true;
-    }
-  ];
 }
