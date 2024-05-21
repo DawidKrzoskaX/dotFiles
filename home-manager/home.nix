@@ -1,12 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -14,9 +8,10 @@
 
     # You can also split up your configuration and import pieces of it here:
     #./nvim.nix
-    ./alacrity.nix
-    ./cli.nix
-    ./shell.nix
+    ./shell/alacrity.nix
+    ./shell/cli.nix
+    ./shell/shell.nix
+    ./shell/tmux.nix
     ./modules/fonts.nix
     ./desktop/fonts.nix
     ./desktop/wofi.nix

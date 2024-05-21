@@ -3,9 +3,7 @@
   programs.nixvim.globals.mapleader = " ";
   programs.nixvim.opts = {
     updatetime = 50; # Faster completion
-
     number = true;
-    relativenumber = true;
     autoindent = true;
     expandtab = true;
     tabstop = 4;
