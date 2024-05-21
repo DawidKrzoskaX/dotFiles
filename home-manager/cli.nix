@@ -1,10 +1,7 @@
- {
-  config,
-  pkgs,
-  ...
-}: let
+{ config, pkgs, ... }:
+let
 
-  in{
+in {
   home.packages = with pkgs; [
     playerctl
     ripgrep
@@ -18,7 +15,7 @@
     gh
     killall
     rustup
-    ];
+    neofetch
+  ];
 
 }
-
