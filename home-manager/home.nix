@@ -8,7 +8,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     #./nvim.nix
-    ./shell/alacrity.nix
+    ./shell/alacritty.nix
     ./shell/cli.nix
     ./shell/shell.nix
     ./shell/tmux.nix
