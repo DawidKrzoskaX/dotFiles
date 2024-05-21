@@ -13,16 +13,5 @@
     shiftwidth = 4;
     smartindent = true;
     breakindent = true;
-
-    ignorecase = true;
-    incsearch = true;
-    hlsearch = true;
-    smartcase = true;
-    cursorline = true;
-
-    wrap = false;
-    swapfile = false;
-    undofile = true;
-    conceallevel = 2;
   };
 }

@@ -1,4 +1,4 @@
-  {
+{
   imports = [
     ./telescope.nix
     ./neo-tree.nix
@@ -8,6 +8,8 @@
     ./none-ls.nix
     ./lsp.nix
     ./cmp.nix
+    ./options.nix
+    ./lualine.nix
   ];
 
   programs.nixvim = {
