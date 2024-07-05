@@ -8,6 +8,8 @@
         clangd.enable = true;
         nixd.enable = true;
         rust-analyzer.enable = true;
+        rust-analyzer.installRustc = false;
+        rust-analyzer.installCargo = false;
       };
       keymaps.lspBuf = {
         "gd" = "definition";
