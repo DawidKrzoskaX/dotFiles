@@ -16,12 +16,14 @@
     enable = true;
     colorschemes.catppuccin = {
       enable = true;
-      flavour = "mocha";
-      transparentBackground = true;
-      showBufferEnd = true;
-      integrations = {
-        neotree = true;
-        indent_blankline.enabled = true;
+      settings = {
+        flavour = "mocha";
+        transparentBackground = true;
+        showBufferEnd = true;
+        integrations = {
+          neotree = true;
+          indent_blankline.enabled = true;
+        };
       };
     };
   };

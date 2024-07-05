@@ -31,6 +31,9 @@
 
           set -g @catppuccin_directory_text "#{pane_current_path}"
           set -g @catppuccin_status_background "default"
+
+          set -g base-index 1
+          setw -g pane-base-index 1
         '';
       }
     ];
