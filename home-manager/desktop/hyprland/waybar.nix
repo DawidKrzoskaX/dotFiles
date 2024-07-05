@@ -1,45 +1,27 @@
-{
-  outputs,
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}: let
+{ outputs, config, lib, pkgs, inputs, ... }:
+let
   # Dependencies
   pavucontrol = "${pkgs.pavucontrol}/bin/pavucontrol";
   hyprland = config.wayland.windowManager.hyprland.package;
 in {
   # Let it try to start a few more times
-  systemd.user.services.waybar = {
-    Unit.StartLimitBurst = 30;
-  };
+  systemd.user.services.waybar = { Unit.StartLimitBurst = 30; };
   programs.waybar = {
     enable = true;
     systemd.enable = true;
     settings = {
       primary = {
-        exclusive = false;
-        passthrough = false;
-        height = 40;
-        margin = "6";
+        height = 32;
+        "margin-bottom" = -11;
+        "margin-top" = 0;
+        spacing = 0;
         position = "top";
-        modules-left = [
-            "hyprland/workspaces"
-            "hyprland/submap"
-          ];
+        layer = "top";
+        modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
 
-        modules-center = [
-          "cpu"
-          "memory"
-          "pulseaudio"
-        ];
+        modules-center = [ "cpu" "memory" "pulseaudio" ];
 
-        modules-right = [
-          "network"
-          "tray"
-          "clock"
-        ];
+        modules-right = [ "network" "tray" "clock" ];
 
         clock = {
           interval = 1;
@@ -51,9 +33,7 @@ in {
             <tt><small>{calendar}</small></tt>'';
         };
 
-        cpu = {
-          format = "  {usage}%";
-        };
+        cpu = { format = "  {usage}%"; };
 
         pulseaudio = {
           format = "{icon}  {volume}%";
@@ -62,11 +42,7 @@ in {
             headphone = "󰋋";
             headset = "󰋎";
             portable = "";
-            default = [
-              ""
-              ""
-              ""
-            ];
+            default = [ "" "" "" ];
           };
           on-click = pavucontrol;
         };
@@ -80,25 +56,12 @@ in {
         battery = {
           bat = "BAT0";
           interval = 10;
-          format-icons = [
-            "󰁺"
-            "󰁻"
-            "󰁼"
-            "󰁽"
-            "󰁾"
-            "󰁿"
-            "󰂀"
-            "󰂁"
-            "󰂂"
-            "󰁹"
-          ];
+          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
           format = "{icon} {capacity}%";
           format-charging = "󰂄 {capacity}%";
           onclick = "";
         };
-        "sway/window" = {
-          max-length = 20;
-        };
+        "sway/window" = { max-length = 20; };
         network = {
           interval = 3;
           format-wifi = "   {essid}";
@@ -118,39 +81,39 @@ in {
     # x y -> vertical, horizontal
     # x y z -> top, horizontal, bottom
     # w x y z -> top, right, bottom, left
-    style =''
-        * {
-          font-family: FiraCode;
-          font-size: 12pt;
-          padding: 0;
-          margin: 0 0.4em;
-        }
+    style = ''
+      * {
+        font-family: FiraCode;
+        font-size: 12pt;
+        padding: 0;
+        margin: 0 0.4em;
+      }
 
-        window#waybar {
-          padding: 0;
-          border-radius: 0.5em;
-        }
+      window#waybar {
+        padding: 0;
+        border-radius: 0.5em;
+      }
 
-        .modules-left {
-          margin-left: -0.65em;
-        }
+      .modules-left {
+        margin-left: -0.65em;
+      }
 
-        .modules-right {
-          margin-right: -0.65em;
-        }
+      .modules-right {
+        margin-right: -0.65em;
+      }
 
-        #workspaces button {
-          padding-left: 0.4em;
-          padding-right: 0.4em;
-          margin-top: 0.15em;
-          margin-bottom: 0.15em;
-        }
-        
-        #clock {
-          padding-right: 1em;
-          padding-left: 1em;
-          border-radius: 0.5em;
-        }
-      '';
+      #workspaces button {
+        padding-left: 0.4em;
+        padding-right: 0.4em;
+        margin-top: 0.15em;
+        margin-bottom: 0.15em;
+      }
+
+      #clock {
+        padding-right: 1em;
+        padding-left: 1em;
+        border-radius: 0.5em;
+      }
+    '';
   };
 }

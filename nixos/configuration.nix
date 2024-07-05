@@ -1,12 +1,6 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, lib, config, pkgs, ... }: {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware):
@@ -42,18 +36,16 @@
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
-  nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+  nix.registry = (lib.mapAttrs (_: flake: { inherit flake; }))
+    ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 
   # This will additionally add your inputs to the system's legacy channels
   # Making legacy nix commands consistent as well, awesome!
-  nix.nixPath = ["/etc/nix/path"];
-  environment.etc =
-    lib.mapAttrs'
-    (name: value: {
-      name = "nix/path/${name}";
-      value.source = value.flake;
-    })
-    config.nix.registry;
+  nix.nixPath = [ "/etc/nix/path" ];
+  environment.etc = lib.mapAttrs' (name: value: {
+    name = "nix/path/${name}";
+    value.source = value.flake;
+  }) config.nix.registry;
 
   nix.settings = {
     # Enable flakes and new 'nix' command
@@ -70,7 +62,7 @@
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -81,12 +73,12 @@
       # Be sure to change it (using passwd) after rebooting!
       ignoreShellProgramCheck = true;
       isNormalUser = true;
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = [ "wheel" "networkmanager" ];
       shell = pkgs.zsh;
     };
   };
   # Enable networking
-  
+
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -125,29 +117,24 @@
     #media-session.enable = true;
   };
 
-
   environment.systemPackages = with pkgs; [
     firefox
     spotify
     pavucontrol
     pulseaudio
     mpd
-    ];
+  ];
 
-    # Some programs need SUID wrappers, can be configured further or are
-    # started in user sessions.
-    # programs.mtr.enable = true;
-    # programs.gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-  services = {
-    mpd.enable = true;
-  };
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+  services = { mpd.enable = true; };
 
-  fonts.packages = with pkgs; [ 
-    nerdfonts
-    ];
+  fonts.packages = with pkgs; [ nerdfonts ];
 
   system.stateVersion = "23.11";
 }
