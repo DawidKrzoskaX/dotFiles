@@ -13,15 +13,15 @@ in {
       primary = {
         height = 32;
         "margin-bottom" = -11;
-        "margin-top" = 0;
+        "margin-top" = 5;
         spacing = 0;
         position = "top";
         layer = "top";
-        modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
+        modules-left = [ "hyprland/workspaces" "custom/spotify" ];
 
         modules-center = [ "cpu" "memory" "pulseaudio" ];
 
-        modules-right = [ "network" "tray" "clock" ];
+        modules-right = [ "network" "clock" ];
 
         clock = {
           interval = 1;
@@ -34,9 +34,21 @@ in {
         };
 
         cpu = { format = "  {usage}%"; };
+        memory = { format = "  {percentage}%"; };
+
+        "custom/spotify" = {
+          exec =
+            "/usr/bin/python3 /full/path/to/mediaplayer.py --player spotify";
+          format = "{}  ";
+          return-type = "json";
+        };
+        mpd = {
+          format =
+            "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})";
+        };
 
         pulseaudio = {
-          format = "{icon}  {volume}%";
+          format = "{icon}   {volume}%";
           format-muted = "   0%";
           format-icons = {
             headphone = "󰋋";
@@ -45,21 +57,6 @@ in {
             default = [ "" "" "" ];
           };
           on-click = pavucontrol;
-        };
-        idle_inhibitor = {
-          format = "{icon}";
-          format-icons = {
-            activated = "󰒳";
-            deactivated = "󰒲";
-          };
-        };
-        battery = {
-          bat = "BAT0";
-          interval = 10;
-          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-          format = "{icon} {capacity}%";
-          format-charging = "󰂄 {capacity}%";
-          onclick = "";
         };
         "sway/window" = { max-length = 20; };
         network = {

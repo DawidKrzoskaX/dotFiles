@@ -57,8 +57,8 @@
         drop_shadow = true;
         shadow_range = 12;
         shadow_offset = "3 3";
-        "col.shadow" = "0x44000000";
-        "col.shadow_inactive" = "0x66000000";
+        "col.shadow" = "rgb(b3ff1a)";
+        "col.shadow_inactive" = "rgb(4a4e69)";
       };
       animations = { enabled = true; };
 
