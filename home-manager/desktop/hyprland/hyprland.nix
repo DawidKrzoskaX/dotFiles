@@ -1,5 +1,5 @@
 { lib, config, pkgs, ... }: {
-  imports = [ ./binds.nix ./waybar.nix ./hyprpaper.nix ];
+  imports = [ ./binds.nix ./waybar.nix ./hyprpaper.nix];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -68,6 +68,7 @@
     extraConfig = ''
       monitor=DP-3,2560x1440,-2560x0,1
       monitor=HDMI-A-1,1920x1080,0x0,1
+      monitor=Unknown-1,disable,1
     '';
   };
 }
