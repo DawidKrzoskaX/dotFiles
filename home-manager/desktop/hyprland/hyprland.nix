@@ -1,5 +1,5 @@
 { lib, config, pkgs, ... }: {
-  imports = [ ./binds.nix ./waybar.nix ./hyprpaper.nix];
+  imports = [ ./binds.nix ./waybar.nix ./hyprpaper.nix ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -17,6 +17,7 @@
         gaps_in = 15;
         gaps_out = 20;
         border_size = 2;
+        "col.active_border" = "rgb(b5179e)";
       };
 
       group = { groupbar.font_size = 11; };
@@ -56,9 +57,9 @@
         };
         drop_shadow = true;
         shadow_range = 12;
-        shadow_offset = "3 3";
-        "col.shadow" = "rgb(b3ff1a)";
-        "col.shadow_inactive" = "rgb(4a4e69)";
+        shadow_offset = "1 1";
+        "col.shadow" = "rgb(b5179e)";
+        "col.shadow_inactive" = "rgb(480ca8)";
       };
       animations = { enabled = true; };
 

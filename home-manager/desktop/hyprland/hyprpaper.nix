@@ -1,13 +1,17 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{ config, pkgs, ... }:
+let
 
-  in{
-  home.packages = with pkgs; [
-    hyprpaper
-    ];
+in {
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload =
+        [ "~/wolfar-nix-config/home-manager/desktop/hyprland/wallpapers/Cry.jpg" ];
 
+      wallpaper = [
+        "DP-3, ~/wolfar-nix-config/home-manager/desktop/hyprland/wallpapers/Cry.jpg"
+        "HDMI-A-1, ~/wolfar-nix-config/home-manager/desktop/hyprland/wallpapers/Cry.jpg"
+      ];
+    };
+  };
 }
-

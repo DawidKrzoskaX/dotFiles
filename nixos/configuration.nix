@@ -123,6 +123,7 @@
     pavucontrol
     pulseaudio
     mpd
+    godot_4
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
