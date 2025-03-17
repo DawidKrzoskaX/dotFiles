@@ -1,5 +1,5 @@
 { lib, config, pkgs, ... }: {
-  imports = [ ./binds.nix ./waybar.nix ./hyprpaper.nix ];
+    #  imports = [ ./binds.nix ./waybar.nix ./hyprpaper.nix ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -43,24 +43,24 @@
         new_window_takes_over_fullscreen = 2;
       };
 
-      decoration = {
-        active_opacity = 0.97;
-        inactive_opacity = 0.77;
-        fullscreen_opacity = 1.0;
-        rounding = 7;
-        blur = {
-          enabled = true;
-          size = 5;
-          passes = 3;
-          new_optimizations = true;
-          ignore_opacity = true;
-        };
-        drop_shadow = true;
-        shadow_range = 12;
-        shadow_offset = "1 1";
-        "col.shadow" = "rgb(b5179e)";
-        "col.shadow_inactive" = "rgb(480ca8)";
-      };
+      #      decoration = {
+      #        active_opacity = 0.97;
+      #        inactive_opacity = 0.77;
+      #        fullscreen_opacity = 1.0;
+      #        rounding = 7;
+      #        blur = {
+      #          enabled = true;
+      #          size = 5;
+      #          passes = 3;
+      #          new_optimizations = true;
+      #          ignore_opacity = true;
+      #        };
+      #        drop_shadow = true;
+      #        shadow_range = 12;
+      #        shadow_offset = "1 1";
+      #        "col.shadow" = "rgb(b5179e)";
+      #        "col.shadow_inactive" = "rgb(480ca8)";
+      #      };
       animations = { enabled = true; };
 
       exec = [ "${pkgs.hyprpaper}/bin/hyprpaper" ];

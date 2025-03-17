@@ -1,9 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   fontProfiles = {
     enable = true;
     monospace = {
       family = "FiraCode Nerd Font";
-      package = pkgs.nerdfonts.override {fonts = ["FiraCode"];};
+      package = pkgs.nerdfonts;
     };
     regular = {
       family = "Fira Sans";

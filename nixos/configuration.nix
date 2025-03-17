@@ -102,7 +102,6 @@
   # services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -116,6 +115,9 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot =
+    true; # powers up the default Bluetooth controller on boot
 
   environment.systemPackages = with pkgs; [
     firefox
@@ -123,7 +125,6 @@
     pavucontrol
     pulseaudio
     mpd
-    godot_4
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -135,6 +136,9 @@
   # };
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl = {
+    enable = true;
+  };
   hardware.nvidia = {
 
     # Modesetting is required.
@@ -166,9 +170,8 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  services = { mpd.enable = true; };
+    #services = { mpd.enable = true; };
 
-  fonts.packages = with pkgs; [ nerdfonts ];
-
-  system.stateVersion = "23.11";
+  #fonts.packages = [ pkgs.nerd-fonts.fira-code ];
+  system.stateVersion = "24.11";
 }

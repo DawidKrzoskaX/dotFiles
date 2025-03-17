@@ -7,8 +7,8 @@ in {
   # Let it try to start a few more times
   systemd.user.services.waybar = { Unit.StartLimitBurst = 30; };
   programs.waybar = {
-    enable = true;
-    systemd.enable = true;
+    enable = false;
+    systemd.enable = false;
     settings = {
       primary = {
         height = 32;
