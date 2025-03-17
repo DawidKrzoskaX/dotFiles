@@ -7,8 +7,8 @@ in {
   # Let it try to start a few more times
   systemd.user.services.waybar = { Unit.StartLimitBurst = 30; };
   programs.waybar = {
-    enable = false;
-    systemd.enable = false;
+    enable = true;
+    systemd.enable = true;
     settings = {
       primary = {
         height = 32;
@@ -17,7 +17,7 @@ in {
         spacing = 0;
         position = "top";
         layer = "top";
-        modules-left = [ "hyprland/workspaces" "custom/spotify" ];
+        modules-left = [ "hyprland/workspaces" ];
 
         modules-center = [ "cpu" "memory" "pulseaudio" ];
 
@@ -36,12 +36,6 @@ in {
         cpu = { format = "  {usage}%"; };
         memory = { format = "  {percentage}%"; };
 
-        "custom/spotify" = {
-          exec =
-            "/usr/bin/python3 /full/path/to/mediaplayer.py --player spotify";
-          format = "{}  ";
-          return-type = "json";
-        };
         mpd = {
           format =
             "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})";

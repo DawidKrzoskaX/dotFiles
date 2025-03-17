@@ -62,7 +62,6 @@
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
-  hardware.graphics.enable = true;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -73,6 +72,7 @@
       # Be sure to change it (using passwd) after rebooting!
       ignoreShellProgramCheck = true;
       isNormalUser = true;
+      password = "3533";
       extraGroups = [ "wheel" "networkmanager" ];
       shell = pkgs.zsh;
     };
@@ -136,11 +136,7 @@
   # };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl = {
-    enable = true;
-  };
   hardware.nvidia = {
-
     # Modesetting is required.
     modesetting.enable = true;
 
@@ -170,7 +166,7 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-    #services = { mpd.enable = true; };
+  #services = { mpd.enable = true; };
 
   #fonts.packages = [ pkgs.nerd-fonts.fira-code ];
   system.stateVersion = "24.11";

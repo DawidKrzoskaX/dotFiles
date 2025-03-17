@@ -16,6 +16,7 @@ in {
     killall
     rustup
     neofetch
+    python3
   ];
 
 }

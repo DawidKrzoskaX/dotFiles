@@ -1,5 +1,5 @@
 { lib, config, pkgs, ... }: {
-    #  imports = [ ./binds.nix ./waybar.nix ./hyprpaper.nix ];
+  imports = [ ./binds.nix ./waybar.nix ./hyprpaper.nix ];
 
   wayland.windowManager.hyprland = {
     enable = true;
