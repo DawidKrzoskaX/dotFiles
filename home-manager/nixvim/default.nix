@@ -10,6 +10,7 @@
     ./cmp.nix
     ./options.nix
     ./lualine.nix
+    ./web-devicons.nix
   ];
 
   programs.nixvim = {

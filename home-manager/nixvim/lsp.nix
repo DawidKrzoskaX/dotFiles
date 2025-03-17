@@ -7,9 +7,9 @@
         bashls.enable = true;
         clangd.enable = true;
         nixd.enable = true;
-        rust-analyzer.enable = true;
-        rust-analyzer.installRustc = false;
-        rust-analyzer.installCargo = false;
+        rust_analyzer.enable = true;
+        rust_analyzer.installRustc = false;
+        rust_analyzer.installCargo = false;
       };
       keymaps.lspBuf = {
         "gd" = "definition";
