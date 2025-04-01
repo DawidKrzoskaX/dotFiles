@@ -15,6 +15,7 @@
     ./modules/fonts.nix
     ./desktop/fonts.nix
     ./desktop/wofi.nix
+    ./desktop/flameshot.nix
     ./desktop/hyprland/hyprland.nix
     ./nixvim/default.nix
     #./music.nix
