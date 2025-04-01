@@ -1,7 +1,1 @@
-{ config, pkgs, ... }:
-let
-
-in {
-  services = { flameshot.enable = true; };
-
-}
+{ pkgs, ... }: { home.packages = with pkgs; [ grim slurp wl-clipboard ]; }

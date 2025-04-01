@@ -29,7 +29,8 @@
       ",XF86AudioNext,exec,${playerctl} next"
       ",XF86AudioPrev,exec,${playerctl} previous"
       ",XF86AudioPlay,exec,${playerctl} play-pause"
-
+      ''SUPER SHIFT, S, exec, grim -g "$(slurp)" - | wl-copy''
+      "SUPER, Print, exec, grim - | tee ~/Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy"
     ] ++
     # Change workspace
     (map (n: "SUPER,${n},workspace,name:${n}") workspaces) ++

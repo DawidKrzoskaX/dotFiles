@@ -11,6 +11,7 @@
     ./options.nix
     ./lualine.nix
     ./web-devicons.nix
+    ./clipboard.nix
   ];
 
   programs.nixvim = {
