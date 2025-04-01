@@ -5,6 +5,7 @@ in {
   home.packages = with pkgs; [
     playerctl
     ripgrep
+    viu 
     fd
     gcc
     gdb

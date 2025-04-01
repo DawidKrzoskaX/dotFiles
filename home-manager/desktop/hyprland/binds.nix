@@ -19,7 +19,7 @@
       "SUPER,q,killactive"
       "SUPER,m,exit"
       "SUPER,f,fullscreen,1"
-      "SUPER,t,exec,alacritty"
+      "SUPER,t,exec,kitty"
       "SUPER,o,exec,wofi --show drun"
       ",XF86AudioRaiseVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
       ",XF86AudioLowerVolume,exec,${pactl} set-sink-volume @DEFAULT_SINK@ -5%"

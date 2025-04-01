@@ -4,7 +4,7 @@
     mouse = true;
     shell = "${pkgs.zsh}/bin/zsh";
     prefix = "C-b";
-    terminal = "alacritty";
+    terminal = "kitty";
 
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
