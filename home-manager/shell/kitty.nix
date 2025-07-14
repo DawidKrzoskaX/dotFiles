@@ -17,7 +17,7 @@
     };
 
     # Theme (optional)
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
 
     # Keybindings
     keybindings = {
